@@ -45,4 +45,8 @@ class Bird {
                                       }
                           }
           }
+
+  isOffScreen() {
+    return this.location.y > height;
+  }
 }

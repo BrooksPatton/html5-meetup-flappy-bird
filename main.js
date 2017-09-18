@@ -39,7 +39,7 @@ function draw() {
     bird.applyForce(gravity);
     bird.update();
 
-    if(bird.collidesWith(pipe1) || bird.collidesWith(pipe2)) {
+    if(bird.collidesWith(pipe1) || bird.collidesWith(pipe2) || bird.isOffScreen()) {
       playing = false;
     }
     bird.display();
