@@ -20,6 +20,15 @@ function draw() {
 
   pipe1.update();
   pipe2.update();
+
+  if(pipe1.isOffScreen()) {
+    pipe1 = new Pipe();
+  }
+
+  if(pipe2.isOffScreen()) {
+    pipe2 = new Pipe();
+  }
+
   pipe1.display();
   pipe2.display();
 

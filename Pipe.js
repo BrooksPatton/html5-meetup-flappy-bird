@@ -31,4 +31,8 @@ class Pipe {
     this.location.add(this.velocity);
     this.acceleration.mult(0);
   }
+
+  isOffScreen() {
+    return this.location.x + this.width <= 0;
+  }
 }
