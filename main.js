@@ -18,6 +18,8 @@ function setup() {
 function draw() {
   background(0);
 
+  pipe1.update();
+  pipe2.update();
   pipe1.display();
   pipe2.display();
 

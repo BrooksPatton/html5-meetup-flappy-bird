@@ -2,7 +2,7 @@ class Pipe {
   constructor(location=createVector(width,0)) {
     this.location = location;
     this.acceleration = createVector(0, 0);
-    this.velocity = createVector(0, 0);
+    this.velocity = createVector(-2.4, 0);
 
     this.color = {r: 0, g: 255, b: 0};
     this.width = 20;
