@@ -29,4 +29,20 @@ class Bird {
     this.velocity.mult(0);
     this.applyForce(this.flapForce);
   }
+
+  collidesWith(pipe) {
+        if(
+                    (this.location.x > pipe.location.x && this.location.x + this.size < pipe.location.x + pipe.width) || 
+                            (this.location.x + this.size > pipe.location.x && this.location.x + this.size < pipe.location.x + pipe.width)
+                                  ) {
+                if(
+                              this.location.y > pipe.gapLocation && this.location.y + this.size < pipe.gapLocation + pipe.gapSize
+                                      ) {
+                          return false;
+                                }
+                      else {
+                                return true;
+                                      }
+                          }
+          }
 }

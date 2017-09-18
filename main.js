@@ -4,6 +4,7 @@ let bird;
 let gravity;
 let pipe1;
 let pipe2;
+let playing;
 
 function setup() {
   createCanvas(600, 600);
@@ -13,6 +14,8 @@ function setup() {
   pipe2 = new Pipe();
 
   gravity = createVector(0, 0.5);
+
+  playing = true;
 }
 
 function draw() {
@@ -32,9 +35,15 @@ function draw() {
   pipe1.display();
   pipe2.display();
 
-  bird.applyForce(gravity);
-  bird.update();
-  bird.display();
+  if(playing) {
+    bird.applyForce(gravity);
+    bird.update();
+
+    if(bird.collidesWith(pipe1) || bird.collidesWith(pipe2)) {
+      playing = false;
+    }
+    bird.display();
+  }
 }
 
 function keyPressed() {
