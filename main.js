@@ -5,6 +5,7 @@ let gravity;
 let pipe1;
 let pipe2;
 let playing;
+let score;
 
 function setup() {
   createCanvas(600, 600);
@@ -14,8 +15,8 @@ function setup() {
   pipe2 = new Pipe();
 
   gravity = createVector(0, 0.5);
-
   playing = true;
+  score = 0;
 }
 
 function draw() {
@@ -26,10 +27,12 @@ function draw() {
 
   if(pipe1.isOffScreen()) {
     pipe1 = new Pipe();
+    if(playing) score += 1;
   }
 
   if(pipe2.isOffScreen()) {
     pipe2 = new Pipe();
+    if(playing) score += 1;
   }
 
   pipe1.display();
@@ -44,6 +47,9 @@ function draw() {
     }
     bird.display();
   }
+
+  fill(255);
+  text(score, width-100, 50);
 }
 
 function keyPressed() {
