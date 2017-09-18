@@ -1,3 +1,5 @@
+const SPACE = 32;
+
 let bird;
 let gravity;
 
@@ -15,4 +17,8 @@ function draw() {
   bird.applyForce(gravity);
   bird.update();
   bird.display();
+}
+
+function keyPressed() {
+  if(keyCode === SPACE) bird.flap();
 }
